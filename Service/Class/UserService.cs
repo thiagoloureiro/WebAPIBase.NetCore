@@ -28,7 +28,7 @@ namespace Service.Class
 
             if (ret != null)
             {
-                ret.Token = Utils.JwtManager.GenerateToken(username);
+                ret.Token = Utils.JwtManager.GenerateToken(username).Value;
             }
             return ret;
         }
