@@ -11,6 +11,7 @@ using Model;
 using Service.Class;
 using Service.Interface;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebAPIBase.NetCore.Helpers;
 
@@ -109,6 +110,12 @@ namespace WebAPIBase.NetCore
             }
 
             app.UseMvc();
+
+            app.UseDefaultFiles(new DefaultFilesOptions
+            {
+                DefaultFileNames = new
+                    List<string> { "index.html" }
+            });
 
             app.Run(context =>
             {
