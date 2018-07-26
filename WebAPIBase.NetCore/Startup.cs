@@ -12,6 +12,7 @@ using Service.Class;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using WebAPIBase.NetCore.Helpers;
 
@@ -117,14 +118,14 @@ namespace WebAPIBase.NetCore
                     List<string> { "index.html" }
             });
 
-            app.Run(context =>
-            {
-                var status = Configuration["status"];
-                var connectionString = Configuration["AppSettings:MySqlConnectionString"];
-                context.Response.WriteAsync("Default Connection: " + connectionString);
-                context.Response.WriteAsync("<br/>");
-                return context.Response.WriteAsync("Status: " + status);
-            });
+            //app.Run(context =>
+            //{
+            //    var status = Configuration["status"];
+            //    var connectionString = Configuration["AppSettings:MySqlConnectionString"];
+            //    context.Response.WriteAsync("Default Connection: " + connectionString);
+            //    context.Response.WriteAsync("<br/>");
+            //    return context.Response.WriteAsync("Status: " + status);
+            //});
         }
     }
 }

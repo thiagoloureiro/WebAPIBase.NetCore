@@ -17,7 +17,7 @@ namespace Data.DapperORM.Class
 
             Configuration = builder.Build();
 
-            string cs = Configuration["AppSettings:MySqlConnectionString"];
+            string cs = Configuration["Logging:AppSettings:MySqlConnectionString"];
 
             var csb = new MySqlConnectionStringBuilder(cs)
             {
