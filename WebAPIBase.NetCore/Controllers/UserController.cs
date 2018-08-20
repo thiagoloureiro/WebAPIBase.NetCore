@@ -20,7 +20,6 @@ namespace WebAPIBase.NetCore.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("")]
-        [SwaggerResponse(200, type: typeof(string), description: "Gera Token")]
         public ActionResult ValidateUser([FromBody]UserLogin request)
         {
             var ret = _userService.GetToken(request.UserName, request.Password);
@@ -34,7 +33,6 @@ namespace WebAPIBase.NetCore.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("create")]
-        [SwaggerResponse(200, type: typeof(string), description: "Insere Usuario")]
         public JsonResult InsertUser(string username, string password, string confirmpassword)
         {
             if (password == confirmpassword)
