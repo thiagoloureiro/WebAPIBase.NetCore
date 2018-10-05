@@ -1,0 +1,23 @@
+# Build ASP.NET Core project using Azure Pipelines
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core?view=vsts
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+  
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- script: |
+    dotnet build --configuration $(buildConfiguration)
+    dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    publishWebProjects: false
+    modifyOutputPath: true
+    zipAfterPublish: true
+    
+- task: PublishBuildArtifacts@1
