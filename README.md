@@ -1,5 +1,5 @@
 # WebAPIBase
-WebAPI (.NET Core 2.0) Base Project with JWT Auth, Dapper (ORM), MySQL, Password Hash, Swagger
+WebAPI (.NET Core 2.1) Base Project with JWT Auth, Dapper (ORM), MySQL, Password Hash, Swagger
 
 ## Instalation / Configuration Steps:
 
