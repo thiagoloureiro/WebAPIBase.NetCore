@@ -1,10 +1,10 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
-using Microsoft.IdentityModel.Tokens;
 
 // This is a Token Example controller to generate the token to your API
 // To access use for ex Postman and call: http://localhost:{port}/api/token/auth

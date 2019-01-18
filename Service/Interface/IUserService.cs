@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Model;
+﻿using Model;
+using System.Collections.Generic;
 
 namespace Service.Interface
 {

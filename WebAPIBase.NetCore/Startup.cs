@@ -1,17 +1,18 @@
-using System;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Data.DapperORM.Class;
 using Data.DapperORM.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Model;
 using Service.Class;
 using Service.Interface;
+using System;
 using System.Collections.Generic;
-using Microsoft.Extensions.Options;
 
 namespace WebAPIBase.NetCore
 {
@@ -88,7 +89,7 @@ namespace WebAPIBase.NetCore
                     policy => policy.RequireClaim("MembershipId"));
             });
 
-            services.AddMvc();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
