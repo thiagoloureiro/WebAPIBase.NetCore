@@ -1,6 +1,10 @@
 # WebAPIBase
 WebAPI (.NET Core 2.2) Base Project with JWT Auth, Dapper (ORM), MySQL, Password Hash, Swagger
 
+[![Build status](https://ci.appveyor.com/api/projects/status/2g98rixcdtqq89br?svg=true)](https://ci.appveyor.com/project/thiagoloureiro/webapibase-netcore)
+
+[![Build history](https://buildstats.info/appveyor/chart/thiagoloureiro/webapibase-netcore)](https://ci.appveyor.com/project/thiagoloureiro/webapibase-netcore/history)
+
 ## Instalation / Configuration Steps:
 
 1) Clone the repository
