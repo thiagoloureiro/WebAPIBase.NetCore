@@ -10,7 +10,7 @@ WebAPI (.NET Core 2.2) Base Project with JWT Auth, Dapper (ORM), MySQL, Password
 1) Clone the repository
 git clone https://github.com/thiagoloureiro/WebAPIBase.NetCore.git
 
-2) Open the Solution file (Visual Studio 2017)
+2) Open the Solution file (Visual Studio 2019)
 
 3) Create a Database (any desired name) in MySQL, you can use an existing one.
 
