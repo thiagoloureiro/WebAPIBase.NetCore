@@ -13,6 +13,7 @@ using Service.Class;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
+using EasyMemoryCache;
 
 namespace WebAPIBase.NetCore
 {
@@ -82,6 +83,7 @@ namespace WebAPIBase.NetCore
 
             // *If* you need access to generic IConfiguration this is **required**
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton<ICaching, Caching>();
 
             services.AddAuthorization(options =>
             {
