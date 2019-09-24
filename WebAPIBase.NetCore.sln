@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIBase.NetCore", "WebAPIBase.NetCore\WebAPIBase.NetCore.csproj", "{33A4C66E-6332-451E-9624-8D6D58A6E51F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBase.API", "WebAPIBase.NetCore\WebAPIBase.API.csproj", "{33A4C66E-6332-451E-9624-8D6D58A6E51F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{0F95F1B6-7F46-4892-91E3-C1948A8F86FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBase.Data", "Data\WebAPIBase.Data.csproj", "{0F95F1B6-7F46-4892-91E3-C1948A8F86FF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{FD8EE623-32A6-44A0-8D4D-113E38C8A79F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBase.Model", "Model\WebAPIBase.Model.csproj", "{FD8EE623-32A6-44A0-8D4D-113E38C8A79F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{5921C0A1-371F-43D3-BD67-80FBA592B184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBase.Service", "Service\WebAPIBase.Service.csproj", "{5921C0A1-371F-43D3-BD67-80FBA592B184}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{53D33712-7B0F-4C71-A843-2B2EA24EF0BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBase.Utils", "Utils\WebAPIBase.Utils.csproj", "{53D33712-7B0F-4C71-A843-2B2EA24EF0BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
