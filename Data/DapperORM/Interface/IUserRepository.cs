@@ -1,6 +1,6 @@
-﻿using Model;
+﻿using WebAPIBase.Model;
 
-namespace Data.DapperORM.Interface
+namespace WebAPIBase.Data.DapperORM.Interface
 {
     public interface IUserRepository
     {

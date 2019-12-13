@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Utils
+namespace WebAPIBase.Utils
 {
     public static class HashUtil
     {

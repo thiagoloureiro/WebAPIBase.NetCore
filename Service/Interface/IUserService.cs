@@ -1,7 +1,7 @@
-﻿using Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using WebAPIBase.Model;
 
-namespace Service.Interface
+namespace WebAPIBase.Service.Interface
 {
     public interface IUserService
     {

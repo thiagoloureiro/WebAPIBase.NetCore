@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model
+namespace WebAPIBase.Model
 {
     public class User
     {

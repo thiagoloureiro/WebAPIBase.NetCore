@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace WebAPIBase.Model
 {
     public enum TokenType
     {

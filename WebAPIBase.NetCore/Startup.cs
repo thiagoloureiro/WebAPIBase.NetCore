@@ -1,5 +1,3 @@
-using Data.DapperORM.Class;
-using Data.DapperORM.Interface;
 using EasyMemoryCache;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -7,16 +5,17 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Model;
-using Service.Class;
-using Service.Interface;
-using System;
-using System.Collections.Generic;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using System;
+using WebAPIBase.Data.DapperORM.Class;
+using WebAPIBase.Data.DapperORM.Interface;
+using WebAPIBase.Model;
+using WebAPIBase.Service.Class;
+using WebAPIBase.Service.Interface;
 
-namespace WebAPIBase.NetCore
+namespace WebAPIBase.API
 {
     public class Startup
     {
@@ -27,7 +26,6 @@ namespace WebAPIBase.NetCore
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             var signingConfigurations = new SigningConfigurations();
@@ -74,14 +72,11 @@ namespace WebAPIBase.NetCore
                     .AllowAnyHeader();
             }));
 
-            // DI Containers Registration
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
 
-            // Add our Config object so it can be injected
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
-            // *If* you need access to generic IConfiguration this is **required**
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddSingleton<ICaching, Caching>();
 
@@ -97,7 +92,6 @@ namespace WebAPIBase.NetCore
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -120,7 +114,6 @@ namespace WebAPIBase.NetCore
 
             app.UseSwagger();
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ForSignAPIClient v1");

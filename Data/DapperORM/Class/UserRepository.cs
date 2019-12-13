@@ -1,36 +1,29 @@
 ﻿using Dapper;
-using Data.DapperORM.Interface;
-using Model;
 using System.Data;
 using System.Linq;
+using WebAPIBase.Data.DapperORM.Interface;
+using WebAPIBase.Model;
 
-namespace Data.DapperORM.Class
+namespace WebAPIBase.Data.DapperORM.Class
 {
     public class UserRepository : BaseRepository, IUserRepository
     {
         public User ValidateUser(string username, string password)
         {
-            User ret;
-            using (var db = GetMySqlConnection())
-            {
-                const string sql = @"select Id, Name, Surname, Email, Phone, LastLogon, CreatedOn, ActivationCode
+            using var db = GetMySqlConnection();
+            const string sql = @"select Id, Name, Surname, Email, Phone, LastLogon, CreatedOn, ActivationCode
                 from User U
                 where Login = @Login and Password = @Password";
 
-                ret = db.Query<User>(sql, new { Login = username, Password = password }, commandType: CommandType.Text).FirstOrDefault();
-            }
-
-            return ret;
+            return db.Query<User>(sql, new { Login = username, Password = password }, commandType: CommandType.Text).FirstOrDefault();
         }
 
         public void InsertUser(string username, string password)
         {
-            using (var db = GetMySqlConnection())
-            {
-                const string sql = @"insert into User (Login, Password, CreatedOn, LastLogon) values (@Login, @Password, NOW(), NOW())";
+            using var db = GetMySqlConnection();
+            const string sql = @"insert into User (Login, Password, CreatedOn, LastLogon) values (@Login, @Password, NOW(), NOW())";
 
-                db.Execute(sql, new { Login = username, Password = password }, commandType: CommandType.Text);
-            }
+            db.Execute(sql, new { Login = username, Password = password }, commandType: CommandType.Text);
         }
     }
 }

@@ -6,10 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
 
-// This is a Token Example controller to generate the token to your API
-// To access use for ex Postman and call: http://localhost:{port}/api/token/auth
-
-namespace WebApplication5.Controllers
+namespace WebAPIBase.API.Controllers
 {
     [Produces("application/json")]
     [Route("api/Token")]
@@ -24,7 +21,7 @@ namespace WebApplication5.Controllers
         {
             string userId = "userId";
 
-            ClaimsIdentity identity = new ClaimsIdentity(
+            var identity = new ClaimsIdentity(
                        new GenericIdentity(userId, "Login"),
                        new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
@@ -32,9 +29,8 @@ namespace WebApplication5.Controllers
                        }
                    );
 
-            DateTime dtCreation = DateTime.Now;
-            DateTime dtExpiration = dtCreation +
-                TimeSpan.FromSeconds(tokenConfigurations.Seconds);
+            var dtCreation = DateTime.Now;
+            var dtExpiration = dtCreation + TimeSpan.FromSeconds(tokenConfigurations.Seconds);
 
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
@@ -56,13 +52,6 @@ namespace WebApplication5.Controllers
                 accessToken = token,
                 message = "OK"
             };
-
-            // case of fail:
-            //return new
-            //{
-            //    authenticated = false,
-            //    message = "Fail to authenticate"
-            //};
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using EasyMemoryCache;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using EasyMemoryCache;
 
-namespace WebAPIBase.NetCore.Controllers
+namespace WebAPIBase.API.Controllers
 {
     [Route("movies")]
     public class MoviesController : Controller
     {
-        private ICaching _caching;
+        private readonly ICaching _caching;
 
         public MoviesController(ICaching caching)
         {

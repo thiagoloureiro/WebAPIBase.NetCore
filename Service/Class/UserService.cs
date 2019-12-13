@@ -1,9 +1,9 @@
-﻿using Data.DapperORM.Interface;
-using Model;
-using Service.Interface;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using WebAPIBase.Data.DapperORM.Interface;
+using WebAPIBase.Model;
+using WebAPIBase.Service.Interface;
 
-namespace Service.Class
+namespace WebAPIBase.Service.Class
 {
     public class UserService : IUserService
     {

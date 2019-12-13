@@ -1,19 +1,22 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 
-public class SigningConfigurations
+namespace WebAPIBase.API
 {
-    public SecurityKey Key { get; }
-    public SigningCredentials SigningCredentials { get; }
-
-    public SigningConfigurations()
+    public class SigningConfigurations
     {
-        using (var provider = new RSACryptoServiceProvider(2048))
-        {
-            Key = new RsaSecurityKey(provider.ExportParameters(true));
-        }
+        public SecurityKey Key { get; }
+        public SigningCredentials SigningCredentials { get; }
 
-        SigningCredentials = new SigningCredentials(
-            Key, SecurityAlgorithms.RsaSha256Signature);
+        public SigningConfigurations()
+        {
+            using (var provider = new RSACryptoServiceProvider(2048))
+            {
+                Key = new RsaSecurityKey(provider.ExportParameters(true));
+            }
+
+            SigningCredentials = new SigningCredentials(
+                Key, SecurityAlgorithms.RsaSha256Signature);
+        }
     }
 }

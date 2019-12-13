@@ -2,7 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.IO;
 
-namespace Data.DapperORM.Class
+namespace WebAPIBase.Data.DapperORM.Class
 {
     public class BaseRepository
     {

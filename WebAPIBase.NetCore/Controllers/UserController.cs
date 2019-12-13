@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Service.Interface;
-using WebAPIBase.NetCore.Requests;
+using WebAPIBase.API.Requests;
+using WebAPIBase.Service.Interface;
 
-namespace WebAPIBase.NetCore.Controllers
+namespace WebAPIBase.API.Controllers
 {
     [Produces("application/json")]
     [Route("api/User")]

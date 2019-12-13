@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WebAPIBase.NetCore.Requests
+namespace WebAPIBase.API.Requests
 {
     public class UserLogin
     {
