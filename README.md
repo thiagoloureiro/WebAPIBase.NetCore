@@ -1,5 +1,5 @@
 # WebAPIBase
-WebAPI (.NET Core 3.1) Base Project with JWT Auth, Dapper (ORM), MySQL, Password Hash, Swagger
+WebAPI (.NET 5) Base Project with JWT Auth, Dapper (ORM), MySQL, Password Hash, Swagger
 
 [![Build status](https://ci.appveyor.com/api/projects/status/2g98rixcdtqq89br?svg=true)](https://ci.appveyor.com/project/thiagoloureiro/webapibase-netcore)
 
